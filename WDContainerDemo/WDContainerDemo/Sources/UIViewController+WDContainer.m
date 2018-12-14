@@ -171,7 +171,7 @@ static NSString *showMoreHeightKey = @"showMoreHeightKey";
     
         [UIView animateWithDuration:0.3 animations:^{
             CGRect frame = presentView.frame;
-            frame.origin.y = (showHeight>0)?([UIScreen mainScreen].bounds.size.height - showHeight-(SafeBottomHeight)):presentH;
+            frame.origin.y = (showHeight>0)?([UIScreen mainScreen].bounds.size.height - showHeight):presentH;
             frame.size.height = (showHeight>0)?showHeight:([UIScreen mainScreen].bounds.size.height - presentH);
             presentView.frame = frame;
             NSLog(@"presentViewH === %f",presentView.frame.size.height);

@@ -62,12 +62,12 @@
     [self routerEvent:@"helloRuntime" info:@{@"name":@"hello"}];
     
     
-    UIView *showView = [[UIView alloc] initWithFrame:CGRectMake(0, 280, self.view.frame.size.width, 20)];
-    showView.backgroundColor = [UIColor grayColor];
+//    UIView *showView = [[UIView alloc] initWithFrame:CGRectMake(0, 280, self.view.frame.size.width, 20)];
+//    showView.backgroundColor = [UIColor grayColor];
     UIViewController *vc = [[UIViewController alloc] init];
-    [vc.view addSubview:showView];
+//    [vc.view addSubview:showView];
     vc.view.backgroundColor = [UIColor redColor];
-    [self WDShowMorePageWithTarget:vc showHeight:400];
+    [self WDShowMorePageWithTarget:vc showHeight:0];
 //    [self.navigationController popViewControllerAnimated:YES];
 }
 

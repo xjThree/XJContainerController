@@ -1,9 +1,8 @@
+//  UIViewController+WDContainer.m
+//  WDContainerDemo
 //
-//  UIResponder+Event.m
-//  MiGuKit
-//
-//  Created by zhgz on 2018/3/31.
-//  Copyright © 2018年 Migu Video Technology. All rights reserved.
+//  Created by WonderTek on 2018/12/12.
+//  Copyright © 2018年 WonderTek. All rights reserved.
 //
 
 #import "UIResponder+Event.h"
