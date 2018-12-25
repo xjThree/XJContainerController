@@ -19,6 +19,7 @@
 		EE9FEE5A21C0EEA100767A6E /* TestVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9FEE5921C0EEA100767A6E /* TestVC1.m */; };
 		EE9FEE5D21C0EEB400767A6E /* TestVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9FEE5C21C0EEB400767A6E /* TestVC2.m */; };
 		EE9FEE6021C0EEC300767A6E /* TestVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9FEE5F21C0EEC300767A6E /* TestVC3.m */; };
+		EEDE965521C9DC0C005C6C10 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDE965421C9DC0C005C6C10 /* SecondViewController.m */; };
 		EEED79D221C3A60700866ECA /* UIResponder+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EEED79D021C3A60700866ECA /* UIResponder+Event.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		EE9FEE5C21C0EEB400767A6E /* TestVC2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC2.m; sourceTree = "<group>"; };
 		EE9FEE5E21C0EEC300767A6E /* TestVC3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC3.h; sourceTree = "<group>"; };
 		EE9FEE5F21C0EEC300767A6E /* TestVC3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC3.m; sourceTree = "<group>"; };
+		EEDE965321C9DC0C005C6C10 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		EEDE965421C9DC0C005C6C10 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		EEED79D021C3A60700866ECA /* UIResponder+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Event.m"; sourceTree = "<group>"; };
 		EEED79D121C3A60700866ECA /* UIResponder+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Event.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +139,8 @@
 				EE9FEE5C21C0EEB400767A6E /* TestVC2.m */,
 				EE9FEE5E21C0EEC300767A6E /* TestVC3.h */,
 				EE9FEE5F21C0EEC300767A6E /* TestVC3.m */,
+				EEDE965321C9DC0C005C6C10 /* SecondViewController.h */,
+				EEDE965421C9DC0C005C6C10 /* SecondViewController.m */,
 			);
 			path = WDContainerDemo;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEDE965521C9DC0C005C6C10 /* SecondViewController.m in Sources */,
 				EE9FEE3521C0D0BF00767A6E /* ViewController.m in Sources */,
 				EE9FEE4021C0D0CD00767A6E /* main.m in Sources */,
 				EE9FEE3221C0D0BF00767A6E /* AppDelegate.m in Sources */,
@@ -451,6 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62S2T4922W;
 				INFOPLIST_FILE = WDContainerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62S2T4922W;
 				INFOPLIST_FILE = WDContainerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

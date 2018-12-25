@@ -13,6 +13,7 @@
 #import "TestVC2.h"
 #import "TestVC3.h"
 #import "UIResponder+Event.h"
+#import "SecondViewController.h"
 //#import <mas>
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -156,7 +157,7 @@
             break;
     }
     
-    UIViewController *containVC = [UIViewController new];
+    UIViewController *containVC = [SecondViewController new];
     
     
     

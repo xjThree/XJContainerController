@@ -47,44 +47,43 @@ static NSString *showMoreHeightKey = @"showMoreHeightKey";
     bottomView.center = self.view.center;
     
     containVC = [UIViewController new];
-    containVC.marginBottom = bottomView;
+//    containVC.marginBottom = bottomView;
     
 }
 
-- (void)setMarginTop:(id)marginTop{
-    objc_setAssociatedObject(self, &marginTopKey, marginTop, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (self.marginTop) {
+- (void)setWdMarginTop:(id)wdMarginTop{
+    objc_setAssociatedObject(self, &marginTopKey, wdMarginTop, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (wdMarginTop) {
 //        [self addChildViewController:self.marginTop];
-        UIView *showTopView = [self getShowView:self.marginTop];
-        showTopView.frame = CGRectMake(0, SafeStatusHeight, self.view.frame.size.width, self.topHeight);
+        UIView *showTopView = [self getShowView:wdMarginTop];
+        showTopView.frame = CGRectMake(0, SafeStatusHeight, self.view.frame.size.width, self.wdTopHeight);
         [self.view addSubview:showTopView];
     }
 }
 
--(id)marginTop{
+-(id)wdMarginTop{
     return objc_getAssociatedObject(self, &marginTopKey);
 }
 
-- (void)setMarginMain:(id)marginMain{
-    objc_setAssociatedObject(self, &marginMainKey, marginMain, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (self.marginMain) {
-        UIView *showMainView = [self getShowView:marginMain];
-        showMainView.frame = CGRectMake(0, (self.marginTop?self.topHeight:0)+(SafeStatusHeight), self.view.frame.size.width, self.view.frame.size.height-(self.marginTop?self.topHeight:0)-(self.marginBottom?self.bottomHeight:0)-(SafeStatusHeight)-(SafeBottomHeight));
+- (void)setWdMarginMain:(id)wdMarginMain{
+    objc_setAssociatedObject(self, &marginMainKey, wdMarginMain, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (wdMarginMain) {
+        UIView *showMainView = [self getShowView:wdMarginMain];
+        showMainView.frame = CGRectMake(0, (self.wdMarginTop?self.wdTopHeight:0)+(SafeStatusHeight), self.view.frame.size.width, self.view.frame.size.height-(self.wdMarginTop?self.wdTopHeight:0)-(self.wdMarginBottom?self.wdBottomHeight:0)-(SafeStatusHeight)-(SafeBottomHeight));
         [self.view addSubview:showMainView];
     }
 }
 
--(id)marginMain{
+-(id)wdMarginMain{
     return objc_getAssociatedObject(self, &marginMainKey);
 }
 
-- (void)setMarginBottom:(id)marginBottom{
-    objc_setAssociatedObject(self, &marginBottomKey, marginBottom, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (self.marginBottom) {
-       UIView *showBottomView = [self getShowView:self.marginBottom];
+- (void)setWdMarginBottom:(id)wdMarginBottom{
+    objc_setAssociatedObject(self, &marginBottomKey, wdMarginBottom, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (wdMarginBottom) {
+       UIView *showBottomView = [self getShowView:wdMarginBottom];
         NSLog(@"%f",self.view.frame.size.height);
-        showBottomView.frame = CGRectMake(0, self.view.frame.size.height-self.bottomHeight-(SafeBottomHeight), self.view.frame.size.width, self.bottomHeight);
-//        [self addChildViewController:(UIViewController *)self.marginBottom];
+        showBottomView.frame = CGRectMake(0, self.view.frame.size.height-self.wdBottomHeight-(SafeBottomHeight), self.view.frame.size.width, self.wdBottomHeight);
         UIView *safeBottomView = [UIView new];
         safeBottomView.frame = CGRectMake(0, showBottomView.frame.origin.y+showBottomView.frame.size.height, self.view.frame.size.width, SafeBottomHeight);
         safeBottomView.backgroundColor = showBottomView.backgroundColor;
@@ -94,33 +93,35 @@ static NSString *showMoreHeightKey = @"showMoreHeightKey";
     }
 }
 
--(id)marginBottom{
+-(id)wdMarginBottom{
     return objc_getAssociatedObject(self, &marginBottomKey);
 }
 
--(void)setMarginMore:(id)marginMore{
-    objc_setAssociatedObject(self, &marginMoreKey, marginMore, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    NSLog(@"self.marginMore == %@",self.marginMore);
+-(void)setWdMarginMore:(id)wdMarginMore{
+    objc_setAssociatedObject(self, &marginMoreKey, wdMarginMore, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//    NSLog(@"self.marginMore == %@",self.wdMarginMore);
 }
 
--(id)marginMore{
+-(id)wdMarginMore{
     return objc_getAssociatedObject(self, &marginMoreKey);
 }
 
-- (void)setTopHeight:(CGFloat)topHeight{
-    objc_setAssociatedObject(self, &topHeightKey, @(topHeight), OBJC_ASSOCIATION_ASSIGN);
+- (void)setWdTopHeight:(CGFloat)wdTopHeight{
+    NSNumber *placeH = @(wdTopHeight);
+    objc_setAssociatedObject(self, &topHeightKey, placeH, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)topHeight{
+- (CGFloat)wdTopHeight{
     NSNumber *topHeight = objc_getAssociatedObject(self, &topHeightKey);
     return [topHeight floatValue];
 }
 
-- (void)setBottomHeight:(CGFloat)bottomHeight{
-    objc_setAssociatedObject(self, &bottomHeightKey, @(bottomHeight), OBJC_ASSOCIATION_ASSIGN);
+- (void)setWdBottomHeight:(CGFloat)wdBottomHeight{
+    NSNumber *bootomH = @(wdBottomHeight);
+    objc_setAssociatedObject(self, &bottomHeightKey,bootomH, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)bottomHeight{
+- (CGFloat)wdBottomHeight{
     NSNumber *bottomH = objc_getAssociatedObject(self, &bottomHeightKey);
     return [bottomH floatValue];
 }
@@ -141,32 +142,35 @@ static NSString *showMoreHeightKey = @"showMoreHeightKey";
     }
     if ([marginView isKindOfClass:[UIViewController class]]) {
         UIViewController *bottomVC = marginView;
+        UIViewController *fatherVC = [self getFatherController];
+        [fatherVC addChildViewController:bottomVC];
         return bottomVC.view;
     }
     return nil;
 }
 
-- (void)WDShowMorePageWithTarget:(id)targetPage showHeight:(CGFloat)showHeight{
-    if (self.marginMore) {
-        UIView *nowMarginMoreView = [self getShowView:self.marginMore];
+- (void)wdShowMorePageWithTarget:(id)targetPage showHeight:(CGFloat)showHeight{
+    if (self.wdMarginMore) {
+        UIView *nowMarginMoreView = [self getShowView:self.wdMarginMore];
         [nowMarginMoreView removeFromSuperview];
+        self.wdMarginMore = nil;
     }
         UIView *presentView = [self getShowView:targetPage];
-        self.marginMore = [UIView new];
-        self.marginMore = targetPage;
+//        self.marginMore = [UIView new];
+        self.wdMarginMore = targetPage;
         CGRect frame = presentView.frame ;
         frame.origin.y = [UIScreen mainScreen].bounds.size.height;
         presentView.frame = frame;
         NSLog(@"%f",self.view.frame.size.height);
-        [[UIApplication sharedApplication].keyWindow addSubview:presentView];
-        
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setImage:[UIImage imageNamed:@"dismissIcon"] forState:UIControlStateNormal];
-        btn.frame = CGRectMake(self.view.frame.size.width-30, 10, 20, 20);
-        [btn addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
-        [presentView addSubview:btn];
+        UIViewController *fatherVC = [self getFatherController];
+         [fatherVC.view addSubview:presentView];
+//        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [btn setImage:[UIImage imageNamed:@"dismissIcon"] forState:UIControlStateNormal];
+//        btn.frame = CGRectMake(self.view.frame.size.width-30, 10, 20, 20);
+//        [btn addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
+//        [presentView addSubview:btn];
     
-        CGFloat presentH = [self getFatherTopViewHeight];
+        __block CGFloat presentH = [self getFatherTopViewHeight];
         NSLog(@"presentH === %f",presentH);
     
         [UIView animateWithDuration:0.3 animations:^{
@@ -179,31 +183,32 @@ static NSString *showMoreHeightKey = @"showMoreHeightKey";
 }
 
 - (void)dismiss{
-    NSLog(@"self.marginMore == %@",self.marginMore);
-    if (self.marginMore) {
-        UIView *view = [self getShowView:self.marginMore];
+    NSLog(@"self.marginMore == %@",self.wdMarginMore);
+    if (self.wdMarginMore) {
+        UIView *view = [self getShowView:self.wdMarginMore];
+        __weak UIViewController *weakSelf = self;
         [UIView animateWithDuration:0.3 animations:^{
             CGRect frame = view.frame;
             frame.origin.y = [UIScreen mainScreen].bounds.size.height;
             view.frame = frame;
         } completion:^(BOOL finished) {
-            self.marginMore = nil;
+            weakSelf.wdMarginMore = nil;
         }];
     }
 }
 
 - (CGFloat)getFatherTopViewHeight{
-    UIResponder *responder = [self nextResponder];
+    UIResponder *responder = self;
     while (responder) {
         if ([responder isKindOfClass:[UIViewController class]]) {
             UIViewController *fatherVC = (UIViewController *)responder;
-            if (fatherVC.marginTop) {
-                return [self getShowView:fatherVC.marginTop].frame.size.height+(SafeStatusHeight);
+            if (fatherVC.wdMarginTop) {
+                return [self getShowView:fatherVC.wdMarginTop].frame.size.height+(SafeStatusHeight);
             }
-            if (fatherVC.marginMain) {
-                return [self getShowView:self.marginMain].frame.origin.y+(SafeStatusHeight);
+            if (fatherVC.wdMarginMain) {
+                return [self getShowView:self.wdMarginMain].frame.origin.y+(SafeStatusHeight);
             }
-            if (fatherVC.marginBottom) {
+            if (fatherVC.wdMarginBottom) {
                 return SafeStatusHeight;
             }
         }
@@ -212,5 +217,18 @@ static NSString *showMoreHeightKey = @"showMoreHeightKey";
     return 0;
 }
 
+- (UIViewController *)getFatherController{
+    UIResponder *responder = self;
+    while (responder) {
+        if ([responder isKindOfClass:[UIViewController class]]) {
+            UIViewController *fatherVC = (UIViewController *)responder;
+            if (fatherVC.wdMarginTop || fatherVC.wdMarginBottom || fatherVC.wdMarginMain) {
+                return fatherVC;
+            }
+        }
+        responder = [responder nextResponder];
+    }
+    return nil;
+}
 
 @end

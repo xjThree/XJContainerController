@@ -60,7 +60,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [self routerEvent:@"helloRuntime" info:@{@"name":@"hello"}];
-    
+    [self.navigationController popViewControllerAnimated:YES];
     
 //    UIView *showView = [[UIView alloc] initWithFrame:CGRectMake(0, 280, self.view.frame.size.width, 20)];
 //    showView.backgroundColor = [UIColor grayColor];
@@ -71,6 +71,10 @@
 //    [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)dealloc
+{
+    NSLog(@"我释放了！！！");
+}
 
 //- (void)viewDidLayoutSubviews{
 //    [super viewDidLayoutSubviews];

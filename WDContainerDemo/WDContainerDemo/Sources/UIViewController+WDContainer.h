@@ -12,15 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (WDContainer)
 
-@property (nonatomic,strong,nullable) id marginTop;
-@property (nonatomic,strong,nullable) id marginBottom;
-@property (nonatomic,strong,nullable) id marginMain;
-@property (nonatomic,strong,nullable) id marginMore;
+@property (nonatomic,strong,nullable) id wdMarginTop;
+@property (nonatomic,strong,nullable) id wdMarginBottom;
+@property (nonatomic,strong,nullable) id wdMarginMain;
+@property (nonatomic,strong,nullable) id wdMarginMore;
 
-@property (nonatomic,assign) CGFloat bottomHeight;
-@property (nonatomic,assign) CGFloat topHeight;
+@property (nonatomic,assign) CGFloat wdBottomHeight;
+@property (nonatomic,assign) CGFloat wdTopHeight;
 
-- (void)WDShowMorePageWithTarget:(id)targetPage showHeight:(CGFloat)showHeight;
+- (void)wdShowMorePageWithTarget:(id)targetPage showHeight:(CGFloat)showHeight;
 
 @end
 
