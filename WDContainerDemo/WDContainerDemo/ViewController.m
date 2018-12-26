@@ -167,11 +167,11 @@
     
     containVC.view.backgroundColor = [UIColor whiteColor];
     
-    containVC.bottomHeight = 100;
-    containVC.topHeight = 88;
-    containVC.marginTop = top;
-    containVC.marginBottom = bottom;
-    containVC.marginMain = main;
+    containVC.wdBottomHeight = 100;
+    containVC.wdTopHeight = 88;
+    containVC.wdMarginTop = top;
+    containVC.wdMarginBottom = bottom;
+    containVC.wdMarginMain = main;
     
     self.navigationController.navigationBar.hidden = YES;
     

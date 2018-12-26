@@ -67,7 +67,7 @@
     UIViewController *vc = [[UIViewController alloc] init];
 //    [vc.view addSubview:showView];
     vc.view.backgroundColor = [UIColor redColor];
-    [self WDShowMorePageWithTarget:vc showHeight:0];
+    [self wdShowMorePageWithTarget:vc showHeight:0];
 //    [self.navigationController popViewControllerAnimated:YES];
 }
 

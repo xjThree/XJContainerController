@@ -160,7 +160,9 @@ static NSString *showMoreHeightKey = @"showMoreHeightKey";
         self.wdMarginMore = targetPage;
         CGRect frame = presentView.frame ;
         frame.origin.y = [UIScreen mainScreen].bounds.size.height;
+        frame.size.width = [UIScreen mainScreen].bounds.size.width;
         presentView.frame = frame;
+    
         NSLog(@"%f",self.view.frame.size.height);
         UIViewController *fatherVC = [self getFatherController];
          [fatherVC.view addSubview:presentView];
