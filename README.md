@@ -1,5 +1,5 @@
 # XJContainerController
-iOS 分屏控制器，完美适配iPhoneX系列
+iOS 分屏控制器,适配iPhoneX系列
 
 
 ![Image text](https://github.com/xjThree/XJContainerController/blob/master/Images/shanchu.png)
