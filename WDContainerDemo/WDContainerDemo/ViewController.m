@@ -172,6 +172,7 @@
     containVC.wdMarginTop = top;
     containVC.wdMarginBottom = bottom;
     containVC.wdMarginMain = main;
+    [containVC wdShowFromStatusBar:YES];
     
     self.navigationController.navigationBar.hidden = YES;
     

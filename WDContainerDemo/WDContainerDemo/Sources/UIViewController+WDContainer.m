@@ -184,6 +184,18 @@ static NSString *showMoreHeightKey = @"showMoreHeightKey";
         }];
 }
 
+-(void)wdShowFromStatusBar:(BOOL)isFromStatus{
+    if (isFromStatus) {
+        UIView *showTopView = [self getShowView:self.wdMarginTop];
+        showTopView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.wdTopHeight);
+        UIView *showMainView = [self getShowView:self.wdMarginMain];
+        showMainView.frame = CGRectMake(0, (self.wdMarginTop?self.wdTopHeight:0), self.view.frame.size.width, self.view.frame.size.height-(self.wdMarginTop?self.wdTopHeight:0)-(self.wdMarginBottom?self.wdBottomHeight:0)-(SafeBottomHeight));
+    }else{
+        UIView *showTopView = [self getShowView:self.wdMarginTop];
+        showTopView.frame = CGRectMake(0, SafeStatusHeight, self.view.frame.size.width, self.wdTopHeight);
+    }
+}
+
 - (void)dismiss{
     NSLog(@"self.marginMore == %@",self.wdMarginMore);
     if (self.wdMarginMore) {
