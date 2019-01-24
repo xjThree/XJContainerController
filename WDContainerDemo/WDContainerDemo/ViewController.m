@@ -168,7 +168,7 @@
     containVC.view.backgroundColor = [UIColor whiteColor];
     
     containVC.wdBottomHeight = 100;
-    containVC.wdTopHeight = 88;
+    containVC.wdTopHeight = 44;
     containVC.wdMarginTop = top;
     containVC.wdMarginBottom = bottom;
     containVC.wdMarginMain = main;

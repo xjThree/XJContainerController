@@ -26,7 +26,7 @@
 #define SafeBottomHeight  (IS_IPHONE_Xseries == YES) ? 34 : 0
 //iPhone X系列导航栏
 #define SafeNavigationHeight  (IS_IPHONE_Xseries == YES) ? 88 : 64
-#define SafeStatusHeight      (IS_IPHONE_Xseries == YES) ? 44 : 0
+#define SafeStatusHeight      (IS_IPHONE_Xseries == YES) ? 44 : 20
 
 @implementation UIViewController (WDContainer)
 
