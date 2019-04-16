@@ -1,16 +1,27 @@
 PODS:
+  - AppCenter (1.14.0):
+    - AppCenter/Analytics (= 1.14.0)
+    - AppCenter/Crashes (= 1.14.0)
+  - AppCenter/Analytics (1.14.0):
+    - AppCenter/Core
+  - AppCenter/Core (1.14.0)
+  - AppCenter/Crashes (1.14.0):
+    - AppCenter/Core
   - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - AppCenter
   - Masonry
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AppCenter
     - Masonry
 
 SPEC CHECKSUMS:
+  AppCenter: 02c5efe08d3bbab5421ae41d5f7aa7238906b817
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 3b0b9d493c074ddee4cb77579e20ba5572beba71
+PODFILE CHECKSUM: 0028122e0c5587959b38ebe692cd1a29e35cc3b3
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
